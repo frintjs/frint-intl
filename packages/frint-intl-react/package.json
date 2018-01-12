@@ -1,0 +1,34 @@
+{
+  "name": "frint-intl-react",
+  "version": "0.0.0",
+  "description": "Internationalize FrintJS Apps using React",
+  "main": "lib/index.js",
+  "homepage": "https://github.com/frintjs/frint-intl/tree/master/packages/frint-intl-react",
+  "scripts": {
+    "lint": "cross-env ../../node_modules/.bin/eslint --color '{src,test}/**/*.js'",
+    "transpile": "cross-env ../../node_modules/.bin/babel src --out-dir lib",
+    "test": "cross-env ../../node_modules/.bin/jest ./src/*.spec.js",
+    "cover:run": "cross-env ../../node_modules/.bin/jest --coverage ./src/*.spec.js",
+    "cover": "npm run cover:run",
+    "dist:lib": "cross-env ../../node_modules/.bin/webpack --config ./webpack.config.js",
+    "dist:min": "cross-env DIST_MIN=1 ../../node_modules/.bin/webpack --config ./webpack.config.js",
+    "dist": "npm run dist:lib && npm run dist:min",
+    "prepublish": "npm run transpile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frintjs/frint-intl.git"
+  },
+  "author": "frint-intl Authors (https://github.com/frintjs/frint-intl/graphs/contributors)",
+  "keywords": [
+    "frint"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "cross-env": "^5.0.5"
+  },
+  "bugs": {
+    "url": "https://github.com/frintjs/frint-intl/issues"
+  },
+  "license": "MIT"
+}
